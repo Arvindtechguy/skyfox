@@ -1,2 +1,9 @@
-# skyfox
-Skyfox is an multi-role drone system with an automated quick-swap payload rack. It Combines emergency Health/Disaster response (emergency food, AED/ Medical kits, and BLE/AI victim tracking) with Smart solar panel maintenance (dust-density-based air/water cleaning) on a Parallel Rack System.
+# Skyfox
+
+Skyfox is an autonomous multi-role drone system with an automated quick-swap payload rack.
+
+This repository now includes a Mech Fiesta Ideathon website (`index.html`) covering:
+- Emergency/disaster response payload dispatch
+- ML-assisted victim detection and mission execution
+- Solar panel cleaning using dust-density detection (air/water mode)
+- Conductive fast charging with automatic payload swap for 24/7 operations
