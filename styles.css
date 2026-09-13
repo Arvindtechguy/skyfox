@@ -1,0 +1,701 @@
+.hero:before {
+  background-image:
+    linear-gradient(90deg, #111a35 5%, #111a35b8 50%, #111a3530),
+    url("ChatGPT%20Image%20Sep%2013,%202026,%2011_56_28%20AM.png") !important;
+}
+.hero-card img {
+  content: url("Gemini_Generated_Image_34118g34118g3411%20(1).png");
+}
+.drone-plan img {
+  content: url("onyxstar_hydra-12_12kg_payload_heavy_lifter_lift_drone_uas_uav.jpg");
+}
+:root {
+  --navy: #111a35;
+  --navy2: #1b2850;
+  --cream: #f7f3eb;
+  --orange: #ff704d;
+  --yellow: #ffd166;
+  --cyan: #73d7d0;
+  --muted: #aeb9d2;
+  --ink: #18213b;
+  --line: #d9dfeb;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "Space Grotesk", sans-serif;
+}
+button,
+a {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.mono {
+  font:
+    12px "DM Mono",
+    monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.deck-nav {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 19px 4vw;
+  color: white;
+  background: linear-gradient(#111a35ee, transparent);
+}
+.logo {
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.04em;
+}
+.logo b {
+  color: var(--orange);
+}
+.slide-index {
+  color: var(--yellow);
+}
+.dots {
+  display: flex;
+  gap: 7px;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  border: 1px solid white;
+  border-radius: 50%;
+  background: transparent;
+  opacity: 0.7;
+}
+.dot.active {
+  background: var(--yellow);
+  border-color: var(--yellow);
+  opacity: 1;
+}
+.slide {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 105px 8vw 75px;
+  overflow: hidden;
+}
+.slide-inner {
+  width: min(1130px, 100%);
+  margin: auto;
+  position: relative;
+}
+.hero {
+  background: var(--navy);
+  color: white;
+}
+.hero:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, #111a35 5%, #111a35b8 50%, #111a3530),
+    url("https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=1800&q=85")
+      center/cover;
+}
+.hero .slide-inner {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  align-items: center;
+  gap: 6vw;
+}
+.kicker {
+  color: var(--yellow);
+  margin-bottom: 22px;
+}
+.hero h1 {
+  font-size: clamp(4rem, 10vw, 9rem);
+  line-height: 0.82;
+  letter-spacing: -0.09em;
+  margin: 0 0 30px;
+}
+.hero h1 span {
+  color: var(--orange);
+}
+.hero p {
+  font-size: clamp(16px, 2vw, 22px);
+  line-height: 1.45;
+  color: #e1e5f0;
+  max-width: 570px;
+}
+.hero-card {
+  border: 1px solid #ffffff55;
+  background: #111a3588;
+  padding: 18px;
+  transform: rotate(2deg);
+}
+.hero-card img {
+  display: block;
+  width: 100%;
+  height: 285px;
+  object-fit: cover;
+  filter: saturate(0.75);
+}
+.hero-card figcaption {
+  color: var(--yellow);
+  padding-top: 12px;
+  font-size: 12px;
+}
+.team-tag {
+  display: inline-block;
+  border: 1px solid #ffffff66;
+  padding: 10px 13px;
+  margin-top: 26px;
+  color: var(--cyan);
+}
+.section-label {
+  color: var(--orange);
+  margin-bottom: 15px;
+}
+.light {
+  background: var(--cream);
+}
+h2 {
+  font-size: clamp(2.5rem, 6vw, 5.2rem);
+  line-height: 0.95;
+  letter-spacing: -0.07em;
+  margin: 0 0 32px;
+  max-width: 800px;
+}
+.lead {
+  font-size: 18px;
+  line-height: 1.55;
+  max-width: 680px;
+  color: #4f5c76;
+}
+.problem-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 65px;
+  align-items: center;
+}
+.problem-photo {
+  height: 510px;
+  background: url("https://images.unsplash.com/photo-1527482797697-8795b05a13fe?auto=format&fit=crop&w=1000&q=85")
+    center/cover;
+  position: relative;
+}
+.problem-photo:after {
+  content: "DISASTER ZONE / 01";
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  background: var(--orange);
+  padding: 10px;
+  color: white;
+  font:
+    11px "DM Mono",
+    monospace;
+}
+.pain {
+  border-top: 2px solid var(--ink);
+  padding: 17px 0;
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 14px;
+}
+.pain b {
+  font:
+    14px "DM Mono",
+    monospace;
+  color: var(--orange);
+}
+.pain strong {
+  display: block;
+  font-size: 19px;
+}
+.pain p {
+  margin: 4px 0 0;
+  color: #67738a;
+  font-size: 14px;
+}
+.dark {
+  background: var(--navy);
+  color: white;
+}
+.dark .lead {
+  color: var(--muted);
+}
+.compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 36px;
+}
+.compare-box {
+  padding: 28px;
+  border: 1px solid #ffffff26;
+}
+.compare-box.bad {
+  background: #2b2541;
+}
+.compare-box.good {
+  background: var(--orange);
+  color: #1d1731;
+}
+.compare-box h3 {
+  font-size: 24px;
+  margin: 0 0 22px;
+}
+.compare-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.compare-box li {
+  padding: 12px 0;
+  border-top: 1px solid #ffffff38;
+  font-size: 15px;
+}
+.solution-layout {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 70px;
+  align-items: center;
+}
+.drone-plan {
+  background: var(--navy);
+  min-height: 425px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  border-radius: 50% 50% 5px 5px;
+}
+.drone-plan img {
+  width: 85%;
+  mix-blend-mode: screen;
+  filter: contrast(1.05);
+}
+.callout {
+  position: absolute;
+  background: var(--yellow);
+  color: var(--ink);
+  padding: 10px 14px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.callout.one {
+  top: 24%;
+  left: 5%;
+}
+.callout.two {
+  right: 2%;
+  top: 45%;
+  background: var(--cyan);
+}
+.callout.three {
+  bottom: 11%;
+  left: 20%;
+  background: var(--orange);
+  color: white;
+}
+.payload-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.payload-card {
+  border: 1px solid var(--line);
+  padding: 20px;
+  background: white;
+}
+.payload-card b {
+  color: var(--orange);
+  font-size: 25px;
+}
+.payload-card h3 {
+  margin: 12px 0 5px;
+}
+.payload-card p {
+  font-size: 13px;
+  color: #637089;
+  margin: 0;
+}
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 45px;
+}
+.step {
+  padding: 18px;
+  border-top: 3px solid var(--cyan);
+  min-height: 190px;
+  border-right: 1px solid #ffffff24;
+}
+.step:nth-child(2) {
+  border-color: var(--yellow);
+}
+.step:nth-child(3) {
+  border-color: var(--orange);
+}
+.step:last-child {
+  border-color: white;
+}
+.step b {
+  font:
+    20px "DM Mono",
+    monospace;
+  color: var(--yellow);
+}
+.step h3 {
+  font-size: 18px;
+  margin: 28px 0 8px;
+}
+.step p {
+  font-size: 13px;
+  color: var(--muted);
+}
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 40px;
+}
+.metric {
+  background: white;
+  padding: 25px 18px;
+  border-bottom: 4px solid var(--orange);
+}
+.metric:nth-child(2) {
+  border-color: var(--cyan);
+}
+.metric:nth-child(3) {
+  border-color: var(--yellow);
+}
+.metric:nth-child(4) {
+  border-color: var(--navy);
+}
+.metric strong {
+  display: block;
+  font-size: 34px;
+  letter-spacing: -0.06em;
+}
+.metric span {
+  font-size: 12px;
+  color: #65728b;
+}
+.feasibility {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 36px;
+}
+.spec-card {
+  background: #202c55;
+  padding: 25px;
+}
+.spec-card h3 {
+  color: var(--yellow);
+  margin: 0 0 18px;
+}
+.spec-card ul {
+  padding-left: 19px;
+  color: #dbe1ee;
+  line-height: 2;
+  font-size: 14px;
+}
+.timeline {
+  display: flex;
+  margin-top: 30px;
+}
+.time {
+  flex: 1;
+  border-top: 3px solid var(--cyan);
+  padding: 15px 10px 0;
+}
+.time:nth-child(2) {
+  border-color: var(--yellow);
+}
+.time:nth-child(3) {
+  border-color: var(--orange);
+}
+.time strong {
+  font-size: 26px;
+  display: block;
+}
+.time span {
+  font-size: 12px;
+  color: var(--muted);
+}
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 40px;
+}
+.impact {
+  min-height: 270px;
+  padding: 25px;
+  background: var(--navy);
+  color: white;
+}
+.impact:nth-child(2) {
+  background: var(--orange);
+}
+.impact:nth-child(3) {
+  background: #2a8e84;
+}
+.impact b {
+  font-size: 45px;
+  color: var(--yellow);
+}
+.impact h3 {
+  margin: 35px 0 7px;
+}
+.impact p {
+  font-size: 14px;
+  color: #e9edf5;
+}
+.team-slide {
+  background: var(--yellow);
+}
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 38px;
+}
+.member {
+  min-width: 0;
+  background: white;
+  display: flex;
+  flex-direction: column;
+}
+.member img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  background: var(--navy2);
+  filter: grayscale(0.3);
+}
+.member div {
+  flex: 1;
+  padding: 15px;
+}
+.member strong {
+  display: block;
+  font-size: 14px;
+}
+.member span {
+  font-size: 12px;
+  color: #66728a;
+}
+.closing {
+  background: var(--navy);
+  color: white;
+  text-align: center;
+}
+.closing h2 {
+  margin: 15px auto 20px;
+  max-width: 720px;
+}
+.closing .team-tag {
+  margin-top: 10px;
+}
+.controls {
+  position: fixed;
+  z-index: 10;
+  right: 4vw;
+  bottom: 25px;
+  display: flex;
+  gap: 8px;
+}
+.controls button {
+  width: 42px;
+  height: 42px;
+  background: var(--orange);
+  border: 0;
+  color: white;
+  font-size: 18px;
+}
+.controls button:hover {
+  background: var(--yellow);
+  color: var(--ink);
+}
+.rack-diagram {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  width: 285px;
+  padding: 10px;
+  background: #111a35ed;
+  border: 1px solid #ffffff66;
+  box-shadow: 0 10px 25px #0006;
+}
+.rack-diagram svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.rack-diagram figcaption {
+  color: var(--yellow);
+  font:
+    10px "DM Mono",
+    monospace;
+  letter-spacing: 0.08em;
+  margin-top: 6px;
+  text-transform: uppercase;
+}
+@media (max-width: 750px) {
+  body {
+    overflow-x: hidden;
+  }
+  .deck-nav {
+    padding: 14px 18px;
+  }
+  .logo {
+    font-size: 15px;
+  }
+  .slide-index {
+    font-size: 11px;
+  }
+  .dots {
+    display: none;
+  }
+  .slide {
+    min-height: 100svh;
+    padding: 88px 20px 64px;
+    align-items: flex-start;
+  }
+  .hero .slide-inner,
+  .problem-grid,
+  .solution-layout {
+    grid-template-columns: 1fr;
+  }
+  .hero-card {
+    margin-top: 20px;
+    padding: 12px;
+    transform: none;
+  }
+  .hero-card img {
+    height: min(48vw, 230px);
+  }
+  .hero p,
+  .lead {
+    font-size: 16px;
+  }
+  h2 {
+    font-size: clamp(2.5rem, 10vw, 4.4rem);
+    margin-bottom: 24px;
+  }
+  .problem-photo {
+    height: 320px;
+    order: 2;
+  }
+  .compare,
+  .feasibility {
+    grid-template-columns: 1fr;
+  }
+  .steps {
+    grid-template-columns: 1fr 1fr;
+    margin-top: 28px;
+  }
+  .step {
+    min-height: 150px;
+    padding: 15px;
+  }
+  .metrics,
+  .impact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .team-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .member img {
+    aspect-ratio: 4 / 5;
+  }
+  .drone-plan {
+    min-height: min(78vw, 360px);
+    width: 100%;
+  }
+  .drone-plan img {
+    width: 92%;
+  }
+  .callout {
+    padding: 8px 10px;
+    font-size: 10px;
+  }
+  .rack-diagram {
+    width: min(58vw, 285px);
+    transform: scale(0.78);
+    transform-origin: bottom right;
+  }
+  .solution-layout {
+    gap: 28px;
+  }
+  .controls {
+    right: 16px;
+    bottom: max(16px, env(safe-area-inset-bottom));
+  }
+  .controls button {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media (max-width: 450px) {
+  .deck-nav {
+    padding: 12px 14px;
+  }
+  .logo {
+    font-size: 13px;
+  }
+  .slide {
+    padding: 82px 16px 62px;
+  }
+  .hero h1 {
+    font-size: clamp(3.6rem, 18vw, 5rem);
+  }
+  .hero-card img {
+    height: 180px;
+  }
+  .payload-grid,
+  .steps {
+    grid-template-columns: 1fr;
+  }
+  .payload-card {
+    padding: 16px;
+  }
+  .metrics,
+  .impact-grid,
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+  .team-grid .member img {
+    aspect-ratio: 4 / 5;
+  }
+  .drone-plan {
+    min-height: 260px;
+  }
+  .rack-diagram {
+    width: 230px;
+    transform: scale(0.68);
+  }
+}

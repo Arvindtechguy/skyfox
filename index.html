@@ -1,236 +1,428 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Skyfox | Mech Fiesta '26 Ideathon</title>
-  <style>
-    :root {
-      color-scheme: light;
-      --bg: #f4f7fb;
-      --card: #ffffff;
-      --text: #12213a;
-      --subtle: #42526b;
-      --accent: #1f6feb;
-      --border: #d9e2f0;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    .hero {
-      background: linear-gradient(135deg, #0d2a57, #1f6feb);
-      color: #fff;
-      padding: 64px 20px;
-      text-align: center;
-    }
-
-    .hero h1 {
-      margin: 0 0 12px;
-      font-size: clamp(2rem, 4vw, 3rem);
-    }
-
-    .hero p {
-      margin: 0 auto;
-      max-width: 900px;
-      font-size: 1.05rem;
-    }
-
-    main {
-      max-width: 1100px;
-      margin: 28px auto 44px;
-      padding: 0 16px;
-    }
-
-    .slide {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      margin-bottom: 16px;
-      padding: 22px;
-      box-shadow: 0 3px 10px rgba(18, 33, 58, 0.06);
-    }
-
-    .slide h2 {
-      margin-top: 0;
-      color: #0d2a57;
-      font-size: 1.25rem;
-    }
-
-    h3 {
-      margin-bottom: 6px;
-      color: var(--accent);
-      font-size: 1rem;
-    }
-
-    ul {
-      margin: 6px 0 10px 20px;
-      padding: 0;
-    }
-
-    li { margin-bottom: 6px; }
-
-    .metrics {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 10px;
-      margin-top: 8px;
-    }
-
-    .metric {
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 10px 12px;
-      background: #f9fbff;
-    }
-
-    .muted {
-      color: var(--subtle);
-      font-size: 0.95rem;
-    }
-
-    footer {
-      text-align: center;
-      color: var(--subtle);
-      padding: 18px;
-      font-size: 0.95rem;
-    }
-  </style>
-</head>
-<body>
-  <header class="hero">
-    <h1>Skyfox — Autonomous Multi-Role Drone System</h1>
-    <p>
-      Emergency Response &amp; Life-Saving Automation · Mech Fiesta '26 Ideathon · Team RedFox
-    </p>
-  </header>
-
-  <main>
-    <section class="slide" id="slide-1">
-      <h2>Slide 1: Title</h2>
-      <p><strong>Skyfox</strong> — Autonomous Multi-Role Drone System</p>
-      <p class="muted">Emergency Response &amp; Life-Saving Automation · Mech Fiesta '26 Ideathon · Team RedFox · Ideathon 2026</p>
-    </section>
-
-    <section class="slide" id="slide-2">
-      <h2>Slide 2: Problem Statement</h2>
-      <h3>Disaster Logistics &amp; Safety Hazards</h3>
-      <p>
-        Manual drone setup delays ambulance support and critical emergency response when every second counts.
-        In disaster zones, responders cannot afford time lost to deployment checks and ground prep.
-        Forced ground landings in unstructured debris cause high propeller strike rates and crashes.
-      </p>
-      <h3>Inflexible Single-Purpose Fleet Costs</h3>
-      <p>
-        Traditional UAVs feature fixed, non-swappable payloads. Buying separate fleets for search-and-rescue,
-        medical drops, and utility maintenance can raise hardware expenditure by over 60%.
-      </p>
-      <h3>Solar Maintenance Efficiency &amp; Resource Waste</h3>
-      <p>
-        Dust buildup reduces solar output by 15–30% monthly. Scheduled water cleaning wastes large amounts of water,
-        even when light dust could be cleared with compressed air.
-      </p>
-    </section>
-
-    <section class="slide" id="slide-3">
-      <h2>Slide 3: Proposed Solution</h2>
-      <ul>
-        <li><strong>Emergency-First ML Dispatch Engine:</strong> Integrates with 108/112 systems to auto-select and auto-latch mission payloads.</li>
-        <li><strong>Universal Hover-Winch Assembly:</strong> Tension-sensing winch lowers payload safely from hover in flooded or rubble terrain.</li>
-        <li><strong>Conductive Fast-Charging Base Station:</strong> Self-aligning conductive pad enables recharge and automated payload swaps for 24/7 operation.</li>
-      </ul>
-      <h3>Modular Mission Payload Suite</h3>
-      <ul>
-        <li><strong>AED &amp; First-Aid Module:</strong> Rapid medical supply delivery.</li>
-        <li><strong>Emergency Rations Module:</strong> Precision drops of food and water.</li>
-        <li><strong>Victim Detection Module:</strong> ESP32 BLE RSSI + onboard AI vision for victim tracking.</li>
-        <li><strong>Solar Cleaning Module:</strong> Dust-density sensing switches between air and targeted water spray.</li>
-      </ul>
-    </section>
-
-    <section class="slide" id="slide-4">
-      <h2>Slide 4: Innovation &amp; Uniqueness</h2>
-      <ul>
-        <li>First multi-role platform combining emergency logistics and solar utility maintenance on one chassis.</li>
-        <li>Hover-tether winch delivery reduces propeller strike hazards on uneven ground.</li>
-        <li>Real-time dust-density detection can reduce water usage by up to 80%.</li>
-        <li>Fast-charging + auto payload latching supports autonomous 24/7 deployment.</li>
-        <li>One drone. Every mission. Zero downtime.</li>
-      </ul>
-    </section>
-
-    <section class="slide" id="slide-5">
-      <h2>Slide 5: Target Users &amp; Market</h2>
-      <ul>
-        <li><strong>Emergency Response Agencies:</strong> Faster aid delivery for ambulance-delay and remote incident scenarios.</li>
-        <li><strong>Solar Energy Operators:</strong> Utility-scale maintenance use cases keep fleet active and mission-ready.</li>
-        <li><strong>Hybrid Organizations:</strong> Shared fleet model maximizes ROI across emergency + renewable operations.</li>
-      </ul>
-      <p><strong>Addressable Market:</strong> India’s disaster response sector + 500+ GW solar expansion creates a large, high-growth opportunity.</p>
-    </section>
-
-    <section class="slide" id="slide-6">
-      <h2>Slide 6: Feasibility</h2>
-      <h3>Technical Stack</h3>
-      <ul>
-        <li>Pixhawk flight controller with optical precision landing</li>
-        <li>ROS / ESP32 base-station interface</li>
-        <li>NEMA stepper winch with high-tensile Kevlar tether</li>
-        <li>High-current conductive charging plates with hydrophobic sealed enclosure</li>
-      </ul>
-      <h3>Key Challenges &amp; Mitigation</h3>
-      <ul>
-        <li>Center-of-gravity balancing during fluid dropouts</li>
-        <li>Weatherproofing exposed conductive contacts</li>
-      </ul>
-      <div class="metrics">
-        <div class="metric"><strong>₹1L–₹1.5L</strong><br />Max prototype cost (full suite)</div>
-        <div class="metric"><strong>10–15 Weeks</strong><br />Prototype timeline for four core subsystems</div>
-        <div class="metric"><strong>24/7</strong><br />Autonomous operation with auto-recharge and payload swap</div>
-      </div>
-    </section>
-
-    <section class="slide" id="slide-7">
-      <h2>Slide 7: Impact &amp; Future Scope</h2>
-      <h3>Emergency Response Impact</h3>
-      <p>
-        Always-ready 24/7 deployment can reduce ambulance delays and improve rescue outcomes.
-        Skyfox aims to support 500+ agencies across India within 3 years.
-      </p>
-      <h3>Future Roadmap</h3>
-      <ul>
-        <li>Expanded payloads: thermal imaging, pesticide spraying, structural inspection</li>
-        <li>Swarm coordination: distributed ML dispatch for multi-site operations</li>
-        <li>Platform licensing + SaaS dispatch API for emergency and utility operators</li>
-      </ul>
-      <h3>Broader Impact</h3>
-      <ul>
-        <li><strong>Social:</strong> Faster emergency response and improved victim detection</li>
-        <li><strong>Environmental:</strong> Up to 80% less water used for solar cleaning</li>
-        <li><strong>Economic:</strong> Up to 60% fleet cost reduction through payload modularity</li>
-      </ul>
-    </section>
-
-    <section class="slide" id="slide-8">
-      <h2>Slide 8: Meet Team RedFox</h2>
-      <ul>
-        <li><strong>Arvind Narayan M R:</strong> Team Lead — Structural Design, Robotics &amp; Research Head</li>
-        <li><strong>M Dharnesh Bala:</strong> Impact Analysis &amp; Presentation Head</li>
-        <li><strong>Govarthan M:</strong> Payload Design &amp; Website Head</li>
-        <li><strong>Shri Nivas S:</strong> Infield Communication &amp; Speech Head</li>
-      </ul>
-    </section>
-  </main>
-
-  <footer>
-    Skyfox · Autonomous Mission-Adaptive UAV System for Emergency Disaster Logistics &amp; Infrastructure Maintenance
-  </footer>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Skyfox - Team RedFox student ideathon presentation"
+    />
+    <title>Skyfox | Team RedFox</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="deck-nav">
+      <a class="logo" href="#slide-1">SKY<span>FOX</span> <b>/</b> REDFOX</a>
+      <div class="slide-index"><span id="current">01</span> / 10</div>
+      <div class="dots" aria-label="Presentation slides"></div>
+    </nav>
+    <main>
+      <section class="slide hero" id="slide-1">
+        <div class="slide-inner">
+          <div>
+            <div class="mono kicker">Mech Fiesta '26 / Student Ideathon</div>
+            <h1>SKY<span>FOX</span></h1>
+            <p>
+              Autonomous Multi-Role Drone System for Emergency Response &amp;
+              Solar Infrastructure.
+            </p>
+            <span class="team-tag mono">Presented by Team RedFox</span>
+          </div>
+          <figure class="hero-card">
+            <img
+              src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&amp;fit=crop&amp;w=900&amp;q=85"
+              alt="Drone aircraft with an underslung camera payload"
+            />
+            <figcaption class="mono">
+              Payload-ready airframe / hover-winch system
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+      <section class="slide light" id="slide-2">
+        <div class="slide-inner problem-grid">
+          <div class="problem-photo"></div>
+          <div>
+            <div class="mono section-label">02 / The problem</div>
+            <h2>When every second matters, setup time costs lives.</h2>
+            <p class="lead">
+              Disaster zones are unpredictable. Ground access disappears,
+              landing areas fill with rubble, and a single-purpose fleet cannot
+              keep up with changing needs.
+            </p>
+            <div class="pain">
+              <b>01</b>
+              <div>
+                <strong>Slow emergency deployment</strong>
+                <p>Manual setup delays ambulance support and critical aid.</p>
+              </div>
+            </div>
+            <div class="pain">
+              <b>02</b>
+              <div>
+                <strong>Unsafe ground landings</strong>
+                <p>
+                  Debris and uneven terrain cause propeller strikes and crashes.
+                </p>
+              </div>
+            </div>
+            <div class="pain">
+              <b>03</b>
+              <div>
+                <strong>Expensive fixed fleets</strong>
+                <p>
+                  Different payloads require different drones and more hardware.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="slide dark" id="slide-3">
+        <div class="slide-inner">
+          <div class="mono section-label">03 / Why now</div>
+          <h2>One emergency. Three broken workflows.</h2>
+          <p class="lead">
+            Existing solutions solve only one part of the response chain. Skyfox
+            joins delivery, detection, and infrastructure care in one modular
+            platform.
+          </p>
+          <div class="compare">
+            <div class="compare-box bad">
+              <h3>Traditional UAV fleet</h3>
+              <ul>
+                <li>✕ Fixed, single-purpose payloads</li>
+                <li>✕ Needs safe ground landing</li>
+                <li>✕ Manual payload changes</li>
+                <li>✕ Idle between missions</li>
+              </ul>
+            </div>
+            <div class="compare-box good">
+              <h3>Skyfox Project</h3>
+              <ul>
+                <li>✓ Quick-swap mission payloads</li>
+                <li>✓ Hover-winch delivery</li>
+                <li>✓ Auto-recharge + relaunch</li>
+                <li>✓ Emergency + solar in one chassis</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="slide light" id="slide-4">
+        <div class="slide-inner solution-layout">
+          <div>
+            <div class="mono section-label">04 / Our solution</div>
+            <h2>Meet the mission-adaptive aircraft.</h2>
+            <p class="lead">
+              Skyfox is a Multi-Purpose airframe with an automated payload rack,
+              universal hover-winch, onboard sensing, and a conductive
+              fast-charging base station.
+            </p>
+            <div class="payload-grid">
+              <article class="payload-card">
+                <b>✚</b>
+                <h3>Medical aid</h3>
+                <p>AED and first-aid delivery from hover.</p>
+              </article>
+              <article class="payload-card">
+                <b>⌁</b>
+                <h3>Victim detection</h3>
+                <p>BLE RSSI + AI vision for search.</p>
+              </article>
+              <article class="payload-card">
+                <b>◒</b>
+                <h3>Solar cleaning</h3>
+                <p>Dust sensing chooses air or water.</p>
+              </article>
+              <article class="payload-card">
+                <b>▣</b>
+                <h3>Emergency rations</h3>
+                <p>Precision food and water drops.</p>
+              </article>
+            </div>
+          </div>
+          <div class="drone-plan">
+            <img
+              src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&amp;fit=crop&amp;w=1000&amp;q=85"
+              alt="Drone aircraft with an underslung camera payload"
+            /><span class="callout one">AI VISION</span
+            ><span class="callout two">PAYLOAD RACK</span
+            ><span class="callout three">HOVER-WINCH</span>
+            <figure class="rack-diagram">
+              <svg
+                viewBox="0 0 265 105"
+                role="img"
+                aria-label="Generated payload rack exploded view"
+              >
+                <rect
+                  x="12"
+                  y="42"
+                  width="72"
+                  height="34"
+                  rx="5"
+                  fill="#73d7d0"
+                />
+                <rect
+                  x="91"
+                  y="34"
+                  width="82"
+                  height="50"
+                  rx="7"
+                  fill="#ffd166"
+                />
+                <rect
+                  x="180"
+                  y="42"
+                  width="72"
+                  height="34"
+                  rx="5"
+                  fill="#ff704d"
+                />
+                <path
+                  d="M84 59h7M173 59h7M132 10v24M132 84v12"
+                  stroke="#fff"
+                  stroke-dasharray="3 3"
+                />
+                <circle
+                  cx="132"
+                  cy="59"
+                  r="12"
+                  fill="#111a35"
+                  stroke="#fff"
+                  stroke-width="2"
+                />
+                <text
+                  x="20"
+                  y="63"
+                  fill="#111a35"
+                  font-size="8"
+                  font-family="DM Mono"
+                >
+                  AED
+                </text>
+                <text
+                  x="108"
+                  y="63"
+                  fill="#111a35"
+                  font-size="8"
+                  font-family="DM Mono"
+                >
+                  RACK CORE
+                </text>
+                <text
+                  x="190"
+                  y="63"
+                  fill="#fff"
+                  font-size="8"
+                  font-family="DM Mono"
+                >
+                  RATIONS
+                </text>
+                <text
+                  x="119"
+                  y="9"
+                  fill="#ffd166"
+                  font-size="7"
+                  font-family="DM Mono"
+                >
+                  TETHER
+                </text>
+              </svg>
+              <figcaption>
+                Generated payload rack / quick-swap modules
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+      <section class="slide dark" id="slide-5">
+        <div class="slide-inner">
+          <div class="mono section-label">05 / How it works</div>
+          <h2>From alert to action in four moves.</h2>
+          <div class="steps">
+            <div class="step">
+              <b>01</b>
+              <h3>Dispatch</h3>
+              <p>Emergency system selects the mission and payload.</p>
+            </div>
+            <div class="step">
+              <b>02</b>
+              <h3>Launch</h3>
+              <p>Skyfox self-checks, latches, and leaves the base.</p>
+            </div>
+            <div class="step">
+              <b>03</b>
+              <h3>Deliver</h3>
+              <p>Hover-winch lowers aid safely above rough terrain.</p>
+            </div>
+            <div class="step">
+              <b>04</b>
+              <h3>Reset</h3>
+              <p>Return, conductive charge, swap, and relaunch.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="slide light" id="slide-6">
+        <div class="slide-inner">
+          <div class="mono section-label">06 / What makes it different</div>
+          <h2>Small changes. Massive operational advantage.</h2>
+          <div class="metrics">
+            <div class="metric">
+              <strong>24/7</strong
+              ><span>operation with auto-recharge and payload swap</span>
+            </div>
+            <div class="metric">
+              <strong>80%</strong
+              ><span>less water through dust-density sensing</span>
+            </div>
+            <div class="metric">
+              <strong>60%</strong><span>potential fleet cost reduction</span>
+            </div>
+            <div class="metric">
+              <strong>1</strong><span>airframe across four mission roles</span>
+            </div>
+          </div>
+          <p class="lead" style="margin-top: 45px">
+            Innovation is not only the aircraft. It is the complete loop:
+            dispatch, payload, delivery, recharge, and repeat.
+          </p>
+        </div>
+      </section>
+      <section class="slide dark" id="slide-7">
+        <div class="slide-inner">
+          <div class="mono section-label">07 / Feasibility</div>
+          <h2>Built with available technology.</h2>
+          <div class="feasibility">
+            <div class="spec-card">
+              <h3>Technical stack</h3>
+              <ul>
+                <li>Pixhawk flight controller</li>
+                <li>ROS + ESP32 base station interface</li>
+                <li>NEMA stepper winch + Kevlar tether</li>
+                <li>Optical precision landing</li>
+                <li>Sealed conductive charging plates</li>
+              </ul>
+            </div>
+            <div class="spec-card">
+              <h3>Prototype plan</h3>
+              <div class="timeline">
+                <div class="time">
+                  <strong>1–4</strong><span>Airframe + flight</span>
+                </div>
+                <div class="time">
+                  <strong>5–9</strong><span>Payload + winch</span>
+                </div>
+                <div class="time">
+                  <strong>10–15</strong><span>Base + field test</span>
+                </div>
+              </div>
+              <p class="lead" style="margin-top: 30px; font-size: 14px">
+                Estimated full-suite prototype cost: ₹1L–₹1.5L
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="slide light" id="slide-8">
+        <div class="slide-inner">
+          <div class="mono section-label">08 / Impact</div>
+          <h2>Designed for people, power, and planet.</h2>
+          <div class="impact-grid">
+            <article class="impact">
+              <b>01</b>
+              <h3>Social impact</h3>
+              <p>
+                Faster emergency response and improved victim detection for
+                remote or blocked areas.
+              </p>
+            </article>
+            <article class="impact">
+              <b>02</b>
+              <h3>Environmental impact</h3>
+              <p>
+                Targeted air cleaning reduces unnecessary water use across solar
+                farms.
+              </p>
+            </article>
+            <article class="impact">
+              <b>03</b>
+              <h3>Economic impact</h3>
+              <p>
+                Shared hardware makes advanced response more accessible to
+                agencies and operators.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="slide team-slide" id="slide-9">
+        <div class="slide-inner">
+          <div class="mono section-label">09 / The team</div>
+          <h2>Team RedFox brings the idea to life.</h2>
+          <p class="lead">
+            A student team combining robotics, research, communication, impact
+            analysis, and design.
+          </p>
+          <div class="team-grid">
+            <article class="member">
+              <img src="arvind dp 2.png" alt="Arvind Narayan M R" />
+              <div>
+                <strong>Arvind Narayan M R</strong
+                ><span>Team lead · Robotics &amp; research</span>
+              </div>
+            </article>
+            <article class="member">
+              <img src="Dharnesh dp.png" alt="M Dharnesh Bala" />
+              <div>
+                <strong>M Dharnesh Bala</strong
+                ><span>Impact analysis &amp; presentation</span>
+              </div>
+            </article>
+            <article class="member">
+              <img src="Govarthan dp.jpeg" alt="Govarthan M" />
+              <div>
+                <strong>Govarthan M</strong
+                ><span>Payload design &amp; website</span>
+              </div>
+            </article>
+            <article class="member">
+              <img src="nivas dp.png" alt="Shri Nivas S" />
+              <div>
+                <strong>Shri Nivas S</strong
+                ><span>Field communication &amp; speech</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="slide closing" id="slide-10">
+        <div class="slide-inner">
+          <div class="mono kicker">Thank you / Questions?</div>
+          <h2>
+            One drone.<br /><span style="color: var(--orange)"
+              >Every mission.</span
+            >
+          </h2>
+          <p class="lead" style="margin: 0 auto; color: var(--muted)">
+            Skyfox is our student vision for faster, smarter, more adaptable
+            emergency response.
+          </p>
+          <span class="team-tag mono">Team RedFox · Mech Fiesta '26</span>
+        </div>
+      </section>
+    </main>
+    <div class="controls">
+      <button id="prev" aria-label="Previous slide">←</button
+      ><button id="next" aria-label="Next slide">→</button>
+    </div>
+    <script src="script.js" defer></script>
+  </body>
 </html>
