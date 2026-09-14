@@ -64,9 +64,19 @@ a {
   background: linear-gradient(#111a35ee, transparent);
 }
 .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
   font-weight: 700;
   font-size: 18px;
   letter-spacing: 0.04em;
+}
+.logo img {
+  width: 34px;
+  height: 34px;
+  border: 2px solid var(--orange);
+  border-radius: 50%;
+  object-fit: cover;
 }
 .logo b {
   color: var(--orange);
@@ -574,6 +584,10 @@ h2 {
   .logo {
     font-size: 15px;
   }
+  .logo img {
+    width: 30px;
+    height: 30px;
+  }
   .slide-index {
     font-size: 11px;
   }
@@ -666,6 +680,10 @@ h2 {
   }
   .logo {
     font-size: 13px;
+  }
+  .logo img {
+    width: 27px;
+    height: 27px;
   }
   .slide {
     padding: 82px 16px 62px;
