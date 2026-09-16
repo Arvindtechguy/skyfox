@@ -88,6 +88,28 @@ a {
   display: flex;
   gap: 7px;
 }
+
+.nav-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  border: 1px solid var(--yellow);
+  color: var(--yellow);
+  font: 11px "DM Mono", monospace;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.nav-download span {
+  font-size: 18px;
+  line-height: 0.7;
+}
+
+.nav-download:hover {
+  background: var(--yellow);
+  color: var(--ink);
+}
 .dot {
   width: 8px;
   height: 8px;
@@ -177,6 +199,19 @@ a {
   margin-top: 26px;
   color: var(--cyan);
 }
+
+.notes-link {
+  display: inline-block;
+  border: 1px solid var(--cyan);
+  padding: 10px 13px;
+  margin: 26px 0 0 8px;
+  color: var(--cyan);
+}
+
+.notes-link:hover {
+  background: var(--cyan);
+  color: var(--ink);
+}
 .section-label {
   color: var(--orange);
   margin-bottom: 15px;
@@ -210,7 +245,7 @@ h2 {
   position: relative;
 }
 .problem-photo:after {
-  content: "DISASTER ZONE / 01";
+  content: "RACK SYSTEM PROTOTYPE";
   position: absolute;
   bottom: 18px;
   left: 18px;
@@ -594,6 +629,11 @@ h2 {
   .dots {
     display: none;
   }
+
+  .nav-download {
+    padding: 8px 9px;
+    font-size: 9px;
+  }
   .slide {
     min-height: 100svh;
     padding: 88px 20px 64px;
@@ -608,6 +648,10 @@ h2 {
     margin-top: 20px;
     padding: 12px;
     transform: none;
+  }
+
+  .notes-link {
+    margin-left: 0;
   }
   .hero-card img {
     height: min(48vw, 230px);
@@ -715,5 +759,320 @@ h2 {
   .rack-diagram {
     width: 230px;
     transform: scale(0.68);
+  }
+}
+
+/* CAD viewport direction inspired by the supplied reference image. */
+:root {
+  --navy: #111820;
+  --navy2: #1a252f;
+  --cream: #d8dde0;
+  --orange: #e65a4f;
+  --yellow: #d7e46a;
+  --cyan: #78c8c2;
+  --muted: #a8b5bd;
+  --ink: #18232b;
+  --line: #81909a;
+  --wire: rgba(235, 240, 241, 0.28);
+  --blueprint: #17212a;
+}
+
+body {
+  background: var(--blueprint);
+  color: #e9edef;
+  font-family: "DM Mono", monospace;
+}
+
+.deck-nav {
+  padding: 16px 4vw;
+  background: linear-gradient(#101820ee, transparent);
+  border-top: 2px solid #35434d;
+}
+
+.logo {
+  font-family: "Space Grotesk", sans-serif;
+  letter-spacing: 0.08em;
+}
+
+.logo img {
+  border-radius: 0;
+  border: 1px solid var(--orange);
+}
+
+.slide-index,
+.section-label,
+.kicker,
+.team-tag,
+.hero-card figcaption,
+.rack-diagram figcaption {
+  color: var(--yellow);
+}
+
+.slide {
+  background-color: var(--blueprint);
+  color: #e9edef;
+}
+
+.slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.52;
+  background-image:
+    linear-gradient(30deg, transparent 49.7%, rgba(109, 137, 151, 0.16) 50%, transparent 50.3%),
+    linear-gradient(150deg, transparent 49.7%, rgba(109, 137, 151, 0.13) 50%, transparent 50.3%),
+    linear-gradient(rgba(105, 134, 148, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(105, 134, 148, 0.08) 1px, transparent 1px);
+  background-size: 280px 160px, 280px 160px, 56px 56px, 56px 56px;
+  mix-blend-mode: screen;
+}
+
+.slide-inner {
+  z-index: 1;
+}
+
+.slide-inner::before {
+  content: "X  0.00     Y  0.00     Z  0.00";
+  position: absolute;
+  top: -34px;
+  right: 0;
+  color: #7e929d;
+  font: 10px "DM Mono", monospace;
+  letter-spacing: 0.09em;
+}
+
+.slide-inner::after {
+  content: "MODEL SPACE  /  SKYFOX-01";
+  position: absolute;
+  bottom: -37px;
+  left: 0;
+  color: #60737e;
+  font: 10px "DM Mono", monospace;
+  letter-spacing: 0.08em;
+}
+
+.hero {
+  background: var(--blueprint);
+}
+
+.hero:before {
+  background-image:
+    linear-gradient(90deg, rgba(17, 24, 32, 0.9), rgba(17, 24, 32, 0.52) 53%, rgba(17, 24, 32, 0.26)),
+    url("WhatsApp%20Image%202026-09-16%20at%2006.18.54.jpeg") !important;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.9;
+}
+
+.hero h1,
+h2 {
+  font-family: "Space Grotesk", sans-serif;
+  letter-spacing: -0.06em;
+}
+
+.hero h1 {
+  color: #f4f6f5;
+  text-shadow: 0 0 24px rgba(231, 241, 240, 0.18);
+}
+
+.hero h1 span {
+  color: var(--orange);
+}
+
+.hero-card,
+.compare-box,
+.payload-card,
+.metric,
+.spec-card,
+.impact,
+.member {
+  border: 1px solid var(--wire);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.hero-card {
+  background: rgba(17, 24, 32, 0.7);
+  border-color: rgba(231, 237, 238, 0.6);
+  transform: rotate(1deg);
+}
+
+.hero-card img {
+  filter: grayscale(1) contrast(1.1);
+}
+
+.light,
+.team-slide {
+  background-color: #cdd3d5;
+  color: var(--ink);
+}
+
+.light::after,
+.team-slide::after {
+  background-image:
+    linear-gradient(30deg, transparent 49.7%, rgba(37, 61, 72, 0.15) 50%, transparent 50.3%),
+    linear-gradient(150deg, transparent 49.7%, rgba(37, 61, 72, 0.12) 50%, transparent 50.3%),
+    linear-gradient(rgba(37, 61, 72, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 61, 72, 0.1) 1px, transparent 1px);
+}
+
+.light .slide-inner::before,
+.team-slide .slide-inner::before {
+  color: #5a707b;
+}
+
+.light .slide-inner::after,
+.team-slide .slide-inner::after {
+  color: #667b83;
+}
+
+.problem-photo {
+  background:
+    linear-gradient(135deg, rgba(17, 24, 32, 0.25), rgba(17, 24, 32, 0.6)),
+    url("WhatsApp%20Image%202026-09-16%20at%2006.18.54.jpeg") center/contain no-repeat;
+  background-color: #17212a;
+  border: 1px solid #52646e;
+  filter: grayscale(1);
+}
+
+.pain,
+.payload-card,
+.metric {
+  border-color: #718089;
+  background: rgba(232, 236, 237, 0.34);
+}
+
+.pain strong,
+.payload-card h3,
+.metric strong {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.pain p,
+.payload-card p,
+.metric span,
+.lead {
+  color: #465b65;
+}
+
+.dark {
+  background-color: var(--blueprint);
+}
+
+.dark .compare-box.bad,
+.spec-card {
+  background: rgba(39, 54, 64, 0.82);
+}
+
+.dark .compare-box.good {
+  background: rgba(122, 160, 157, 0.78);
+  color: #132028;
+}
+
+.compare-box,
+.spec-card {
+  border-color: rgba(230, 238, 239, 0.35);
+}
+
+.drone-plan {
+  border: 1px solid rgba(231, 237, 238, 0.48);
+  border-radius: 0;
+  background:
+    linear-gradient(30deg, transparent 49.6%, rgba(214, 225, 228, 0.15) 50%, transparent 50.4%),
+    linear-gradient(150deg, transparent 49.6%, rgba(214, 225, 228, 0.11) 50%, transparent 50.4%),
+    #152029;
+  background-size: 180px 105px, 180px 105px, auto;
+}
+
+.drone-plan img {
+  filter: grayscale(1) contrast(1.4) brightness(1.25);
+  mix-blend-mode: screen;
+}
+
+.callout {
+  border: 1px solid #e9efef;
+  background: #d7e46a;
+  font: 10px "DM Mono", monospace;
+  letter-spacing: 0.06em;
+}
+
+.callout.two {
+  background: #78c8c2;
+}
+
+.callout.three {
+  background: var(--orange);
+}
+
+.step {
+  border-color: rgba(231, 237, 238, 0.3);
+}
+
+.metric {
+  border-bottom-width: 2px;
+}
+
+.impact {
+  background: #25343d;
+}
+
+.impact:nth-child(2) {
+  background: #8c9896;
+}
+
+.impact:nth-child(3) {
+  background: #455a63;
+}
+
+.member {
+  background: rgba(232, 236, 237, 0.55);
+}
+
+.member img {
+  filter: contrast(1.05) saturate(1.08);
+}
+
+.controls button {
+  border: 1px solid #e1e8e8;
+  background: transparent;
+  color: #e1e8e8;
+}
+
+.controls button:hover {
+  background: var(--orange);
+  color: white;
+}
+
+.download-ppt {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid #e1e8e8;
+  color: #e1e8e8;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.download-ppt:hover {
+  background: var(--yellow);
+  color: var(--ink);
+}
+
+.rack-diagram {
+  border-radius: 0;
+  background: #142029ee;
+  border-color: #dbe3e4;
+}
+
+@media (max-width: 750px) {
+  .slide-inner::before {
+    right: auto;
+    left: 0;
+  }
+
+  .hero:before {
+    background-position: 62% center;
   }
 }
