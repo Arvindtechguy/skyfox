@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SkyFox Documentation</title>
+<style>
+  body { font-family: Calibri, Arial, sans-serif; line-height: 1.6; margin: 40px; color: #222; }
+  h1 { color: #c0392b; border-bottom: 2px solid #c0392b; padding-bottom: 8px; }
+  h2 { color: #2c3e50; margin-top: 24px; }
+  table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+  th, td { border: 1px solid #bdc3c7; padding: 10px; text-align: left; }
+  th { background-color: #ecf0f1; font-weight: bold; }
+  ul { margin-top: 5px; }
+  .badge { background: #e74c3c; color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.9em; }
+</style>
+</head>
+<body>
+
+<h1>SkyFox: Autonomous Multi-Role UAV Platform</h1>
+<p><strong>Sub-title:</strong> AI Dispatch, Modular Winch Payloads & Conductive Fast-Docking Station</p>
+<p><strong>Event:</strong> MECHAESTA’26 Ideathon | <strong>Domain:</strong> Robotics, Drones & Smart Automation | <strong>Team:</strong> RedFox</p>
+<p><strong>Team Members:</strong> Arvind Narayan M R, M Dharnesh Bala, Govarthan M, Shri Nivas S</p>
+
+<hr>
+
+<h2>1. Executive Summary & Problem Statement</h2>
+<p>When every second matters, should emergency response wait for humans—or should technology be ready to respond? SkyFox bridges the critical delay window during emergency ambulance transit and post-disaster operations by integrating multi-role capabilities onto a single heavy-lift hexacopter platform, saving over 60% in fleet procurement costs.</p>
+<ul>
+  <li><strong>Disaster Logistics Delays & Hazards:</strong> Manual prep wastes critical response time; forced landings on disaster debris cause rotor strikes and airframe crashes.</li>
+  <li><strong>Single-Purpose Fleet Costs:</strong> Dedicated drones for search, drops, and cleaning bloat capital expenditure by 60%+.</li>
+  <li><strong>Water Waste in Solar O&M:</strong> Scheduled routine water cleaning wastes thousands of liters on dust that can be cleared with dry air.</li>
+</ul>
+
+<h2>2. Proposed Solution & Core Modules</h2>
+<ul>
+  <li><strong>ML-Driven Dispatch Engine:</strong> Integrates helpline feeds (108/112) to auto-select and mechanically latch payload pods without human intervention.</li>
+  <li><strong>Hover-Tether Winch:</strong> Employs sonar-guided tether lowering from a 5–10 m hover, bypassing jagged ground debris entirely.</li>
+  <li><strong>Conductive Fast-Docking:</strong> High-current (24V/15A) copper charging plates enable 24/7 unassisted autonomous cycles.</li>
+</ul>
+
+<h2>3. Modular Mission Payload Suite</h2>
+<ul>
+  <li><strong>AED & Emergency Medical Pod:</strong> Rapid trauma kits and defibrillator drops in inaccessible disaster zones.</li>
+  <li><strong>Disaster Rations Pod:</strong> Winch-lowered emergency food, water, and survival packs to stranded survivors.</li>
+  <li><strong>Multi-Spectral Survivor Detection Pod:</strong> Radiometric FLIR Lepton LWIR thermal, Sony 4K RGB, ESP32 BLE RSSI triangulation, and MaxBotix sonar to locate buried victims.</li>
+  <li><strong>Dual-Mode Solar Maintenance Pod:</strong> Optical dust density camera intelligently selecting dry compressed air or micro-water spray (saving up to 80% water).</li>
+</ul>
+
+<h2>4. Technical Implementation & Hardware BOM</h2>
+<p><strong>Estimated Prototype Budget:</strong> ₹1,80,000 – ₹2,00,000 (~$2,200 – $2,400 USD)</p>
+<table>
+  <tr>
+    <th>Subsystem</th>
+    <th>Component</th>
+  </tr>
+  <tr>
+    <td>Autopilot</td>
+    <td>Pixhawk 6C / Cube Orange+</td>
+  </tr>
+  <tr>
+    <td>Edge AI Companion</td>
+    <td>NVIDIA Jetson Orin Nano (8GB)</td>
+  </tr>
+  <tr>
+    <td>Thermal Core</td>
+    <td>FLIR Lepton 3.5 + PureThermal</td>
+  </tr>
+  <tr>
+    <td>Proximity Sonar</td>
+    <td>MaxBotix I2CXL-MaxSonar</td>
+  </tr>
+  <tr>
+    <td>Beacon Triangulator</td>
+    <td>ESP32-WROOM-32U</td>
+  </tr>
+  <tr>
+    <td>Propulsion</td>
+    <td>Tarot 680 Carbon Hexacopter</td>
+  </tr>
+  <tr>
+    <td>Precision Winch</td>
+    <td>NEMA 17 Stepper + Kevlar Line</td>
+  </tr>
+  <tr>
+    <td>Base Station Dock</td>
+    <td>Conductive Copper Contact Pad</td>
+  </tr>
+</table>
+
+<h2>5. Team RedFox</h2>
+<ul>
+  <li><strong>Arvind Narayan M R:</strong> Team Lead · Structural Design, Robotics & Research Head</li>
+  <li><strong>M Dharnesh Bala:</strong> Impact Analysis & Presentation Head</li>
+  <li><strong>Govarthan M:</strong> Payload Design & Website Head</li>
+  <li><strong>Shri Nivas S:</strong> Infield Communication & Speech Head</li>
+</ul>
+
+</body>
+</html>

@@ -88,6 +88,28 @@ a {
   display: flex;
   gap: 7px;
 }
+
+.nav-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  border: 1px solid var(--yellow);
+  color: var(--yellow);
+  font: 11px "DM Mono", monospace;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.nav-download span {
+  font-size: 18px;
+  line-height: 0.7;
+}
+
+.nav-download:hover {
+  background: var(--yellow);
+  color: var(--ink);
+}
 .dot {
   width: 8px;
   height: 8px;
@@ -170,32 +192,25 @@ a {
   padding-top: 12px;
   font-size: 12px;
 }
-.cta-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 26px;
-}
 .team-tag {
   display: inline-block;
   border: 1px solid #ffffff66;
   padding: 10px 13px;
+  margin-top: 26px;
   color: var(--cyan);
 }
-.note-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 14px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  background: rgba(255, 255, 255, 0.04);
-  color: var(--yellow);
-  transition: transform 0.2s ease, border-color 0.2s ease;
+
+.notes-link {
+  display: inline-block;
+  border: 1px solid var(--cyan);
+  padding: 10px 13px;
+  margin: 26px 0 0 8px;
+  color: var(--cyan);
 }
-.note-link:hover {
-  transform: translateY(-1px);
-  border-color: var(--yellow);
+
+.notes-link:hover {
+  background: var(--cyan);
+  color: var(--ink);
 }
 .section-label {
   color: var(--orange);
@@ -230,7 +245,7 @@ h2 {
   position: relative;
 }
 .problem-photo:after {
-  content: "DISASTER ZONE / 01";
+  content: "RACK SYSTEM PROTOTYPE";
   position: absolute;
   bottom: 18px;
   left: 18px;
@@ -614,6 +629,11 @@ h2 {
   .dots {
     display: none;
   }
+
+  .nav-download {
+    padding: 8px 9px;
+    font-size: 9px;
+  }
   .slide {
     min-height: 100svh;
     padding: 88px 20px 64px;
@@ -628,6 +648,10 @@ h2 {
     margin-top: 20px;
     padding: 12px;
     transform: none;
+  }
+
+  .notes-link {
+    margin-left: 0;
   }
   .hero-card img {
     height: min(48vw, 230px);
@@ -738,318 +762,317 @@ h2 {
   }
 }
 
-/* CAD reference treatment */
+/* CAD viewport direction inspired by the supplied reference image. */
 :root {
-  --cad-bg: #151c24;
-  --cad-panel: #1b242d;
-  --cad-panel-soft: #202b35;
-  --cad-line: #d9e2e6;
-  --cad-muted: #91a3ad;
-  --cad-green: #75d69c;
-  --cad-blue: #80a8ff;
-  --cad-red: #e98282;
-  --cad-grid: rgba(157, 180, 193, 0.1);
+  --navy: #111820;
+  --navy2: #1a252f;
+  --cream: #d8dde0;
+  --orange: #e65a4f;
+  --yellow: #d7e46a;
+  --cyan: #78c8c2;
+  --muted: #a8b5bd;
+  --ink: #18232b;
+  --line: #81909a;
+  --wire: rgba(235, 240, 241, 0.28);
+  --blueprint: #17212a;
 }
 
 body {
-  background: var(--cad-bg);
-  color: var(--cad-line);
+  background: var(--blueprint);
+  color: #e9edef;
   font-family: "DM Mono", monospace;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  z-index: 0;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.7;
-  background-image:
-    linear-gradient(30deg, transparent 49.7%, var(--cad-grid) 50%, transparent 50.3%),
-    linear-gradient(150deg, transparent 49.7%, var(--cad-grid) 50%, transparent 50.3%);
-  background-size: 110px 64px;
 }
 
 .deck-nav {
-  padding: 17px 4vw;
-  border-top: 3px solid var(--cad-blue);
-  border-bottom: 1px solid rgba(217, 226, 230, 0.2);
-  background: rgba(21, 28, 36, 0.88);
-  color: var(--cad-line);
-  font-family: "DM Mono", monospace;
+  padding: 16px 4vw;
+  background: linear-gradient(#101820ee, transparent);
+  border-top: 2px solid #35434d;
 }
 
 .logo {
-  font-size: 15px;
-  letter-spacing: 0.12em;
+  font-family: "Space Grotesk", sans-serif;
+  letter-spacing: 0.08em;
 }
 
 .logo img {
-  width: 28px;
-  height: 28px;
-  border: 1px solid var(--cad-line);
   border-radius: 0;
-  filter: grayscale(1) contrast(1.6);
+  border: 1px solid var(--orange);
 }
 
-.logo b,
-.hero h1 span,
 .slide-index,
-.kicker,
 .section-label,
+.kicker,
 .team-tag,
+.hero-card figcaption,
 .rack-diagram figcaption {
-  color: var(--cad-green);
+  color: var(--yellow);
 }
 
-.dots {
-  gap: 6px;
-}
-
-.dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 0;
-  border-color: var(--cad-muted);
-}
-
-.dot.active {
-  background: var(--cad-green);
-  border-color: var(--cad-green);
-}
-
-.slide,
-.hero,
-.light,
-.dark,
-.team-slide,
-.closing {
-  background: var(--cad-bg);
-  color: var(--cad-line);
+.slide {
+  background-color: var(--blueprint);
+  color: #e9edef;
 }
 
 .slide::after {
   content: "";
   position: absolute;
-  z-index: 0;
   inset: 0;
   pointer-events: none;
-  border: 1px solid rgba(217, 226, 230, 0.08);
+  opacity: 0.52;
   background-image:
-    linear-gradient(90deg, transparent 49.8%, rgba(128, 168, 255, 0.08) 50%, transparent 50.2%),
-    linear-gradient(0deg, transparent 49.8%, rgba(117, 214, 156, 0.05) 50%, transparent 50.2%);
-  background-size: 180px 180px;
+    linear-gradient(30deg, transparent 49.7%, rgba(109, 137, 151, 0.16) 50%, transparent 50.3%),
+    linear-gradient(150deg, transparent 49.7%, rgba(109, 137, 151, 0.13) 50%, transparent 50.3%),
+    linear-gradient(rgba(105, 134, 148, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(105, 134, 148, 0.08) 1px, transparent 1px);
+  background-size: 280px 160px, 280px 160px, 56px 56px, 56px 56px;
+  mix-blend-mode: screen;
 }
 
 .slide-inner {
   z-index: 1;
 }
 
+.slide-inner::before {
+  content: "X  0.00     Y  0.00     Z  0.00";
+  position: absolute;
+  top: -34px;
+  right: 0;
+  color: #7e929d;
+  font: 10px "DM Mono", monospace;
+  letter-spacing: 0.09em;
+}
+
+.slide-inner::after {
+  content: "MODEL SPACE  /  SKYFOX-01";
+  position: absolute;
+  bottom: -37px;
+  left: 0;
+  color: #60737e;
+  font: 10px "DM Mono", monospace;
+  letter-spacing: 0.08em;
+}
+
+.hero {
+  background: var(--blueprint);
+}
+
 .hero:before {
-  background:
-    linear-gradient(90deg, rgba(21, 28, 36, 0.88), rgba(21, 28, 36, 0.35)),
-    url("WhatsApp%20Image%202026-09-16%20at%2006.18.54.jpeg") center/cover;
   background-image:
-    linear-gradient(90deg, rgba(21, 28, 36, 0.88), rgba(21, 28, 36, 0.35)),
+    linear-gradient(90deg, rgba(17, 24, 32, 0.9), rgba(17, 24, 32, 0.52) 53%, rgba(17, 24, 32, 0.26)),
     url("WhatsApp%20Image%202026-09-16%20at%2006.18.54.jpeg") !important;
+  background-position: center;
+  background-size: cover;
   opacity: 0.9;
-  mix-blend-mode: screen;
+}
+
+.hero h1,
+h2 {
+  font-family: "Space Grotesk", sans-serif;
+  letter-spacing: -0.06em;
 }
 
 .hero h1 {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(4rem, 10vw, 8.5rem);
-  letter-spacing: 0.02em;
-  line-height: 0.88;
-  text-shadow: 0 0 28px rgba(217, 226, 230, 0.18);
+  color: #f4f6f5;
+  text-shadow: 0 0 24px rgba(231, 241, 240, 0.18);
 }
 
-.hero p,
-.lead {
-  color: var(--cad-muted);
+.hero h1 span {
+  color: var(--orange);
 }
 
 .hero-card,
-.payload-card,
 .compare-box,
-.spec-card,
-.member,
-.impact,
+.payload-card,
 .metric,
-.rack-diagram {
-  border: 1px solid rgba(217, 226, 230, 0.55);
+.spec-card,
+.impact,
+.member {
+  border: 1px solid var(--wire);
   border-radius: 0;
-  background: rgba(27, 36, 45, 0.78);
   box-shadow: none;
 }
 
 .hero-card {
-  border-color: var(--cad-line);
-  transform: rotate(0);
+  background: rgba(17, 24, 32, 0.7);
+  border-color: rgba(231, 237, 238, 0.6);
+  transform: rotate(1deg);
 }
 
-.hero-card img,
-.problem-photo,
-.drone-plan img,
-.member img {
-  filter: grayscale(1) contrast(1.15);
+.hero-card img {
+  filter: grayscale(1) contrast(1.1);
 }
 
-.hero-card figcaption,
-.problem-photo:after {
-  color: var(--cad-green);
-  background: transparent;
+.light,
+.team-slide {
+  background-color: #cdd3d5;
+  color: var(--ink);
 }
 
-.note-link {
-  border-color: rgba(117, 214, 156, 0.75);
-  background: rgba(117, 214, 156, 0.06);
-  color: var(--cad-green);
+.light::after,
+.team-slide::after {
+  background-image:
+    linear-gradient(30deg, transparent 49.7%, rgba(37, 61, 72, 0.15) 50%, transparent 50.3%),
+    linear-gradient(150deg, transparent 49.7%, rgba(37, 61, 72, 0.12) 50%, transparent 50.3%),
+    linear-gradient(rgba(37, 61, 72, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 61, 72, 0.1) 1px, transparent 1px);
 }
 
-.team-tag {
-  border-color: var(--cad-green);
+.light .slide-inner::before,
+.team-slide .slide-inner::before {
+  color: #5a707b;
 }
 
-h2 {
-  font-family: "Space Grotesk", sans-serif;
-  letter-spacing: 0.01em;
-  line-height: 0.98;
-  text-transform: uppercase;
+.light .slide-inner::after,
+.team-slide .slide-inner::after {
+  color: #667b83;
+}
+
+.problem-photo {
+  background:
+    linear-gradient(135deg, rgba(17, 24, 32, 0.25), rgba(17, 24, 32, 0.6)),
+    url("WhatsApp%20Image%202026-09-16%20at%2006.18.54.jpeg") center/contain no-repeat;
+  background-color: #17212a;
+  border: 1px solid #52646e;
+  filter: grayscale(1);
 }
 
 .pain,
-.step,
-.time {
-  border-color: rgba(217, 226, 230, 0.5);
+.payload-card,
+.metric {
+  border-color: #718089;
+  background: rgba(232, 236, 237, 0.34);
 }
 
-.pain b,
-.step b,
-.impact b {
-  color: var(--cad-green);
+.pain strong,
+.payload-card h3,
+.metric strong {
+  font-family: "Space Grotesk", sans-serif;
 }
 
 .pain p,
 .payload-card p,
 .metric span,
-.member span,
-.step p,
-.impact p,
-.time span {
-  color: var(--cad-muted);
+.lead {
+  color: #465b65;
 }
 
-.problem-photo {
-  background:
-    linear-gradient(rgba(21, 28, 36, 0.2), rgba(21, 28, 36, 0.65)),
-    url("WhatsApp%20Image%202026-09-16%20at%2006.18.54.jpeg") center/cover;
-  border: 1px solid rgba(217, 226, 230, 0.5);
+.dark {
+  background-color: var(--blueprint);
 }
 
-.compare-box.bad,
-.compare-box.good,
-.spec-card,
-.impact,
-.impact:nth-child(2),
-.impact:nth-child(3) {
-  background: var(--cad-panel);
-  color: var(--cad-line);
+.dark .compare-box.bad,
+.spec-card {
+  background: rgba(39, 54, 64, 0.82);
 }
 
-.compare-box.good {
-  border-color: var(--cad-green);
+.dark .compare-box.good {
+  background: rgba(122, 160, 157, 0.78);
+  color: #132028;
 }
 
-.compare-box.good h3,
-.spec-card h3 {
-  color: var(--cad-green);
-}
-
-.compare-box li,
-.spec-card li {
-  border-color: rgba(217, 226, 230, 0.2);
-}
-
-.payload-card b {
-  color: var(--cad-green) !important;
+.compare-box,
+.spec-card {
+  border-color: rgba(230, 238, 239, 0.35);
 }
 
 .drone-plan {
-  background:
-    linear-gradient(30deg, transparent 49.5%, rgba(117, 214, 156, 0.16) 50%, transparent 50.5%),
-    linear-gradient(150deg, transparent 49.5%, rgba(128, 168, 255, 0.16) 50%, transparent 50.5%),
-    var(--cad-panel);
-  background-size: 90px 52px;
-  border: 1px solid var(--cad-line);
+  border: 1px solid rgba(231, 237, 238, 0.48);
   border-radius: 0;
+  background:
+    linear-gradient(30deg, transparent 49.6%, rgba(214, 225, 228, 0.15) 50%, transparent 50.4%),
+    linear-gradient(150deg, transparent 49.6%, rgba(214, 225, 228, 0.11) 50%, transparent 50.4%),
+    #152029;
+  background-size: 180px 105px, 180px 105px, auto;
+}
+
+.drone-plan img {
+  filter: grayscale(1) contrast(1.4) brightness(1.25);
+  mix-blend-mode: screen;
 }
 
 .callout {
-  border: 1px solid var(--cad-line);
-  background: var(--cad-bg);
-  color: var(--cad-line);
-  font-family: "DM Mono", monospace;
+  border: 1px solid #e9efef;
+  background: #d7e46a;
+  font: 10px "DM Mono", monospace;
+  letter-spacing: 0.06em;
 }
 
 .callout.two {
-  background: var(--cad-bg);
-  color: var(--cad-green);
+  background: #78c8c2;
 }
 
 .callout.three {
-  background: var(--cad-bg);
+  background: var(--orange);
+}
+
+.step {
+  border-color: rgba(231, 237, 238, 0.3);
 }
 
 .metric {
-  border-bottom: 1px solid var(--cad-line);
+  border-bottom-width: 2px;
 }
 
-.metric:nth-child(n) {
-  border-color: var(--cad-green);
+.impact {
+  background: #25343d;
 }
 
-.metric strong {
-  color: var(--cad-line);
-  font-family: "Space Grotesk", sans-serif;
-  letter-spacing: 0.02em;
+.impact:nth-child(2) {
+  background: #8c9896;
 }
 
-.timeline .time:nth-child(n) {
-  border-color: var(--cad-green);
+.impact:nth-child(3) {
+  background: #455a63;
+}
+
+.member {
+  background: rgba(232, 236, 237, 0.55);
 }
 
 .member img {
-  background: var(--cad-panel-soft);
-}
-
-.member div {
-  background: var(--cad-panel);
+  filter: contrast(1.05) saturate(1.08);
 }
 
 .controls button {
-  border: 1px solid var(--cad-line);
-  background: var(--cad-panel);
-  color: var(--cad-line);
-  border-radius: 0;
+  border: 1px solid #e1e8e8;
+  background: transparent;
+  color: #e1e8e8;
 }
 
 .controls button:hover {
-  background: var(--cad-green);
-  color: var(--cad-bg);
+  background: var(--orange);
+  color: white;
+}
+
+.download-ppt {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid #e1e8e8;
+  color: #e1e8e8;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.download-ppt:hover {
+  background: var(--yellow);
+  color: var(--ink);
 }
 
 .rack-diagram {
-  background: rgba(21, 28, 36, 0.94);
-  box-shadow: none;
-}
-
-.closing h2 span {
-  color: var(--cad-green) !important;
+  border-radius: 0;
+  background: #142029ee;
+  border-color: #dbe3e4;
 }
 
 @media (max-width: 750px) {
-  .deck-nav {
-    background: rgba(21, 28, 36, 0.95);
+  .slide-inner::before {
+    right: auto;
+    left: 0;
+  }
+
+  .hero:before {
+    background-position: 62% center;
   }
 }
