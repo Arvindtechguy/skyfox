@@ -170,12 +170,32 @@ a {
   padding-top: 12px;
   font-size: 12px;
 }
+.cta-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 26px;
+}
 .team-tag {
   display: inline-block;
   border: 1px solid #ffffff66;
   padding: 10px 13px;
-  margin-top: 26px;
   color: var(--cyan);
+}
+.note-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--yellow);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.note-link:hover {
+  transform: translateY(-1px);
+  border-color: var(--yellow);
 }
 .section-label {
   color: var(--orange);
@@ -715,5 +735,321 @@ h2 {
   .rack-diagram {
     width: 230px;
     transform: scale(0.68);
+  }
+}
+
+/* CAD reference treatment */
+:root {
+  --cad-bg: #151c24;
+  --cad-panel: #1b242d;
+  --cad-panel-soft: #202b35;
+  --cad-line: #d9e2e6;
+  --cad-muted: #91a3ad;
+  --cad-green: #75d69c;
+  --cad-blue: #80a8ff;
+  --cad-red: #e98282;
+  --cad-grid: rgba(157, 180, 193, 0.1);
+}
+
+body {
+  background: var(--cad-bg);
+  color: var(--cad-line);
+  font-family: "DM Mono", monospace;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.7;
+  background-image:
+    linear-gradient(30deg, transparent 49.7%, var(--cad-grid) 50%, transparent 50.3%),
+    linear-gradient(150deg, transparent 49.7%, var(--cad-grid) 50%, transparent 50.3%);
+  background-size: 110px 64px;
+}
+
+.deck-nav {
+  padding: 17px 4vw;
+  border-top: 3px solid var(--cad-blue);
+  border-bottom: 1px solid rgba(217, 226, 230, 0.2);
+  background: rgba(21, 28, 36, 0.88);
+  color: var(--cad-line);
+  font-family: "DM Mono", monospace;
+}
+
+.logo {
+  font-size: 15px;
+  letter-spacing: 0.12em;
+}
+
+.logo img {
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--cad-line);
+  border-radius: 0;
+  filter: grayscale(1) contrast(1.6);
+}
+
+.logo b,
+.hero h1 span,
+.slide-index,
+.kicker,
+.section-label,
+.team-tag,
+.rack-diagram figcaption {
+  color: var(--cad-green);
+}
+
+.dots {
+  gap: 6px;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 0;
+  border-color: var(--cad-muted);
+}
+
+.dot.active {
+  background: var(--cad-green);
+  border-color: var(--cad-green);
+}
+
+.slide,
+.hero,
+.light,
+.dark,
+.team-slide,
+.closing {
+  background: var(--cad-bg);
+  color: var(--cad-line);
+}
+
+.slide::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
+  border: 1px solid rgba(217, 226, 230, 0.08);
+  background-image:
+    linear-gradient(90deg, transparent 49.8%, rgba(128, 168, 255, 0.08) 50%, transparent 50.2%),
+    linear-gradient(0deg, transparent 49.8%, rgba(117, 214, 156, 0.05) 50%, transparent 50.2%);
+  background-size: 180px 180px;
+}
+
+.slide-inner {
+  z-index: 1;
+}
+
+.hero:before {
+  background:
+    linear-gradient(90deg, rgba(21, 28, 36, 0.88), rgba(21, 28, 36, 0.35)),
+    url("WhatsApp%20Image%202026-09-16%20at%2006.18.54.jpeg") center/cover;
+  background-image:
+    linear-gradient(90deg, rgba(21, 28, 36, 0.88), rgba(21, 28, 36, 0.35)),
+    url("WhatsApp%20Image%202026-09-16%20at%2006.18.54.jpeg") !important;
+  opacity: 0.9;
+  mix-blend-mode: screen;
+}
+
+.hero h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(4rem, 10vw, 8.5rem);
+  letter-spacing: 0.02em;
+  line-height: 0.88;
+  text-shadow: 0 0 28px rgba(217, 226, 230, 0.18);
+}
+
+.hero p,
+.lead {
+  color: var(--cad-muted);
+}
+
+.hero-card,
+.payload-card,
+.compare-box,
+.spec-card,
+.member,
+.impact,
+.metric,
+.rack-diagram {
+  border: 1px solid rgba(217, 226, 230, 0.55);
+  border-radius: 0;
+  background: rgba(27, 36, 45, 0.78);
+  box-shadow: none;
+}
+
+.hero-card {
+  border-color: var(--cad-line);
+  transform: rotate(0);
+}
+
+.hero-card img,
+.problem-photo,
+.drone-plan img,
+.member img {
+  filter: grayscale(1) contrast(1.15);
+}
+
+.hero-card figcaption,
+.problem-photo:after {
+  color: var(--cad-green);
+  background: transparent;
+}
+
+.note-link {
+  border-color: rgba(117, 214, 156, 0.75);
+  background: rgba(117, 214, 156, 0.06);
+  color: var(--cad-green);
+}
+
+.team-tag {
+  border-color: var(--cad-green);
+}
+
+h2 {
+  font-family: "Space Grotesk", sans-serif;
+  letter-spacing: 0.01em;
+  line-height: 0.98;
+  text-transform: uppercase;
+}
+
+.pain,
+.step,
+.time {
+  border-color: rgba(217, 226, 230, 0.5);
+}
+
+.pain b,
+.step b,
+.impact b {
+  color: var(--cad-green);
+}
+
+.pain p,
+.payload-card p,
+.metric span,
+.member span,
+.step p,
+.impact p,
+.time span {
+  color: var(--cad-muted);
+}
+
+.problem-photo {
+  background:
+    linear-gradient(rgba(21, 28, 36, 0.2), rgba(21, 28, 36, 0.65)),
+    url("WhatsApp%20Image%202026-09-16%20at%2006.18.54.jpeg") center/cover;
+  border: 1px solid rgba(217, 226, 230, 0.5);
+}
+
+.compare-box.bad,
+.compare-box.good,
+.spec-card,
+.impact,
+.impact:nth-child(2),
+.impact:nth-child(3) {
+  background: var(--cad-panel);
+  color: var(--cad-line);
+}
+
+.compare-box.good {
+  border-color: var(--cad-green);
+}
+
+.compare-box.good h3,
+.spec-card h3 {
+  color: var(--cad-green);
+}
+
+.compare-box li,
+.spec-card li {
+  border-color: rgba(217, 226, 230, 0.2);
+}
+
+.payload-card b {
+  color: var(--cad-green) !important;
+}
+
+.drone-plan {
+  background:
+    linear-gradient(30deg, transparent 49.5%, rgba(117, 214, 156, 0.16) 50%, transparent 50.5%),
+    linear-gradient(150deg, transparent 49.5%, rgba(128, 168, 255, 0.16) 50%, transparent 50.5%),
+    var(--cad-panel);
+  background-size: 90px 52px;
+  border: 1px solid var(--cad-line);
+  border-radius: 0;
+}
+
+.callout {
+  border: 1px solid var(--cad-line);
+  background: var(--cad-bg);
+  color: var(--cad-line);
+  font-family: "DM Mono", monospace;
+}
+
+.callout.two {
+  background: var(--cad-bg);
+  color: var(--cad-green);
+}
+
+.callout.three {
+  background: var(--cad-bg);
+}
+
+.metric {
+  border-bottom: 1px solid var(--cad-line);
+}
+
+.metric:nth-child(n) {
+  border-color: var(--cad-green);
+}
+
+.metric strong {
+  color: var(--cad-line);
+  font-family: "Space Grotesk", sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.timeline .time:nth-child(n) {
+  border-color: var(--cad-green);
+}
+
+.member img {
+  background: var(--cad-panel-soft);
+}
+
+.member div {
+  background: var(--cad-panel);
+}
+
+.controls button {
+  border: 1px solid var(--cad-line);
+  background: var(--cad-panel);
+  color: var(--cad-line);
+  border-radius: 0;
+}
+
+.controls button:hover {
+  background: var(--cad-green);
+  color: var(--cad-bg);
+}
+
+.rack-diagram {
+  background: rgba(21, 28, 36, 0.94);
+  box-shadow: none;
+}
+
+.closing h2 span {
+  color: var(--cad-green) !important;
+}
+
+@media (max-width: 750px) {
+  .deck-nav {
+    background: rgba(21, 28, 36, 0.95);
   }
 }

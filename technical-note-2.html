@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Skyfox Technical Note 02 - System architecture and mission logic"
+    />
+    <title>Skyfox | Technical Note 02</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        background: #111a35;
+        color: #edf2ff;
+      }
+
+      .note-shell {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 110px 24px 80px;
+      }
+
+      .note-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 28px;
+        flex-wrap: wrap;
+      }
+
+      .note-pill {
+        display: inline-flex;
+        align-items: center;
+        padding: 8px 12px;
+        border: 1px solid rgba(255,255,255,0.25);
+        color: #ffd166;
+        font: 12px "DM Mono", monospace;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .note-back {
+        display: inline-flex;
+        align-items: center;
+        padding: 10px 14px;
+        border: 1px solid rgba(255,255,255,0.25);
+        color: #73d7d0;
+        font: 12px "DM Mono", monospace;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .note-card {
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(255,255,255,0.18);
+        padding: clamp(22px, 4vw, 42px);
+      }
+
+      h1 {
+        font-size: clamp(2.8rem, 6vw, 5rem);
+        line-height: 0.9;
+        letter-spacing: -0.07em;
+        margin: 0 0 16px;
+      }
+
+      .subtitle {
+        max-width: 760px;
+        color: #b9c4d9;
+        font-size: 1.08rem;
+        line-height: 1.7;
+        margin-bottom: 30px;
+      }
+
+      .note-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 24px;
+      }
+
+      .content-block {
+        background: rgba(255,255,255,0.02);
+        border: 1px solid rgba(255,255,255,0.12);
+        padding: 20px 22px;
+      }
+
+      .content-block h2 {
+        font-size: clamp(1.2rem, 2vw, 1.7rem);
+        margin: 0 0 16px;
+      }
+
+      .content-block p,
+      .content-block li {
+        color: #d6dff2;
+        line-height: 1.75;
+        font-size: 0.98rem;
+      }
+
+      .content-block ul {
+        padding-left: 22px;
+        margin: 0;
+      }
+
+      .stack {
+        display: grid;
+        gap: 14px;
+      }
+
+      .stack-item {
+        padding: 16px 18px;
+        border: 1px solid rgba(255,255,255,0.12);
+        background: rgba(115, 215, 208, 0.04);
+      }
+
+      .stack-item strong {
+        display: block;
+        margin-bottom: 6px;
+        color: #ffd166;
+        font-size: 0.78rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      @media (max-width: 760px) {
+        .note-grid {
+          grid-template-columns: 1fr;
+        }
+        .note-shell {
+          padding-top: 90px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="note-shell">
+      <header class="note-header">
+        <span class="note-pill">Technical Note 02</span>
+        <a class="note-back mono" href="index.html">← Main Page</a>
+      </header>
+
+      <article class="note-card">
+        <h1>Skyfox Systems Architecture</h1>
+        <p class="subtitle">
+          Skyfox is designed as a mission-adaptive drone platform that unifies
+          emergency response, autonomous victim detection, and solar-panel care
+          into one modular airframe. The system uses a common chassis, shared
+          sensing pipeline, and swap-ready payload modules to minimise downtime,
+          improve response speed, and reduce operating cost across multiple use
+          cases.
+        </p>
+
+        <div class="note-grid">
+          <section class="content-block">
+            <h2>1. Core architecture</h2>
+            <p>
+              The aircraft is built around a central flight frame with a universal
+              payload dock, hover-capable winch, and autonomous landing station.
+              Each mission module is standardized so the same drone can switch
+              between medical delivery, rescue scanning, and solar maintenance
+              tasks without requiring a separate vehicle platform.
+            </p>
+            <ul>
+              <li>Common airframe with modular payload bay and low-profile rails</li>
+              <li>High-torque winch maintains hover delivery above unstable ground</li>
+              <li>Automated docking allows quick swap between emergency modules</li>
+              <li>Conductive landing pad provides back-to-service charging</li>
+            </ul>
+          </section>
+
+          <aside class="stack">
+            <div class="stack-item">
+              <strong>Flight</strong>
+              GPS-stabilized multi-rotor control with obstacle-aware navigation
+            </div>
+            <div class="stack-item">
+              <strong>Payload</strong>
+              Medical kit, ration pack, victim-scan module, and dust-management kit
+            </div>
+            <div class="stack-item">
+              <strong>Logic</strong>
+              ML dispatch selects the mission, payload, and route in real time
+            </div>
+          </aside>
+        </div>
+
+        <div class="note-grid" style="margin-top:24px;">
+          <section class="content-block">
+            <h2>2. Mission flow</h2>
+            <p>
+              A mission begins with situational input from the operator or an
+              emergency command channel. The dispatch engine evaluates the terrain,
+              task priority, available payloads, and battery condition, then sends
+              the drone to the most suitable configuration. Once deployed, the
+              drone performs the required actuation while logging data for
+              subsequent recharging and mission planning.
+            </p>
+            <ul>
+              <li>Alert intake and mission classification</li>
+              <li>Payload diagnosis and latch verification</li>
+              <li>Hover or delivery operation above blocked terrain</li>
+              <li>Return-to-base charging and automatic reset</li>
+            </ul>
+          </section>
+
+          <section class="content-block">
+            <h2>3. Why this is viable</h2>
+            <p>
+              The architecture relies on commercially available control systems,
+              modular sensors, and low-cost actuator hardware. This keeps the idea
+              realistic for student prototyping and near-future deployment while
+              preserving the flexibility required for multiple emergency and
+              maintenance scenarios.
+            </p>
+          </section>
+        </div>
+      </article>
+    </div>
+  </body>
+</html>
